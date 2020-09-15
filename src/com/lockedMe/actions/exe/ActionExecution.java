@@ -4,7 +4,7 @@ package com.lockedMe.actions.exe;
 import java.util.Map;
 //import java.util.ArrayList;
 import java.util.HashMap;
-//import java.util.LinkedHashMap;
+import java.util.TreeMap;
 //import java.util.Collections;
 //import java.util.Comparator;
 
@@ -62,11 +62,13 @@ public class ActionExecution implements FileActions {
 //		for(Map<> f: fileMap.values()) {
 //			System.out.println(f);
 //		}
-		System.out.println(fileMap.entrySet());//.values());
-//		for(Map.Entry<String,File> itr: fileMap.entrySet()) {
-//			System.out.println(itr.getValue());
+//		System.out.println(fileMap.entrySet());//.values());
+		TreeMap<String, File> sorted = new TreeMap<>();
+		sorted.putAll(fileMap);
+		for(Map.Entry<String,File> itr: sorted.entrySet()) {
+			System.out.println(itr.getValue());
 //			System.out.println(itr.getKey());
-//		}
+		}
 		
 	}
 
